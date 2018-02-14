@@ -14,7 +14,7 @@ dy = cv2.convertScaleAbs(cv2.Sobel(img, cv2.CV_16S, 0, 1))
 
 edge = cv2.addWeighted(dx, 0.5, dy, 0.5, 0)[:,:, 2]
 
-dots = edgedot.edgedot(edge, 50)
+dots = edgedot.edgedot(edge, 4000)
 cv2.imshow('image(o)', img)
 lowpoly = edgedot.lowploy(img, dots)
 lowpoly = cv2.GaussianBlur(lowpoly, (3, 3), 0)
